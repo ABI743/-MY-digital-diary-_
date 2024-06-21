@@ -1,0 +1,66 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0e5d8;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.diary {
+    width: 60%;
+    height: 80%;
+    perspective: 1000px;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    background: url('wood_texture.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.pages {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: url('old_paper_texture.jpg') no-repeat center center/cover;
+    padding: 20px;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+}
+
+#cover.opened {
+    transform: rotateY(-180deg);
+}
+
+.pages.opened {
+    display: block;
+    animation: flip 1s forwards;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0);
+    }
+}
